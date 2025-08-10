@@ -76,4 +76,25 @@ VITE_MOCK_API_URL=http://localhost:4000
 VITE_API_URL=http://localhost:xxxx
 ```
 
+## Project's Code Review Summary 
+### Repeated Logic:
+Many code blocks and logic are duplicated across components.
+Fix: Extract reusable functions, components, or custom hooks to follow DRY principles.
+
+### Inconsistent Indentation:
+Irregular formatting reduces readability and makes the code harder to follow.
+Fix: Use a code formatter like Prettier to enforce consistent indentation across the project.
+
+### Overuse of Inline Styling:
+Inline classes and styles are heavily used, complicating style management and reuse.
+Fix: Migrate styles to CSS modules, styled-components, or utility-first CSS for modular, maintainable styling.
+
+### Large, Mixed-Responsibility Components:
+Components often handle data fetching, state management, and UI rendering all together, making testing and reuse difficult.
+Fix: Split components into smaller, single-responsibility units (e.g., separate data logic from presentation).
+
+### Naming and Modularity:
+Lack of standardized naming conventions and unclear module boundaries impacts scalability.
+Fix: Adopt consistent naming patterns and organize code into clearly defined modules.
+
 
