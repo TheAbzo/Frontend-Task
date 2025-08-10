@@ -1,6 +1,7 @@
 import  { useMemo, useState } from 'react';
 import Table from './Table/Table';
 import TableActions from './ActionButton/TableActions';
+import { useAuth } from '../context/AuthContext';
 
 const BooksTable = ({
   books,
@@ -16,6 +17,8 @@ const BooksTable = ({
   editPriceMode = false,    // If true, edit button edits price; else edits name
 }) => {
   const [editPrice, setEditPrice] = useState('');
+    const { user } = useAuth();
+
 
   const authorMap = useMemo(() => {
     return authors.reduce((map, author) => {
@@ -86,7 +89,7 @@ const BooksTable = ({
           },
         },
       }),
-      actions: {
+     ...(user && { actions: {
         header: 'Actions',
         id: 'actions',
         cell: ({ row }) => (
@@ -100,10 +103,10 @@ const BooksTable = ({
             onDelete={() => deleteBook(row.original.id, row.original.name)}
           />
         ),
-      },
+      },})
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [editingRowId, editName, editPrice, showPrice, editPriceMode]
+    [editingRowId, editName, editPrice, showPrice, editPriceMode,user]
   );
 
   // Compose columns based on columnsConfig + price if showPrice is true
