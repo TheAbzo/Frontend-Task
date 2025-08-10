@@ -63,4 +63,17 @@ Routes
 
 - /browse-authors: Browse all authors with their published book counts.
 
+## .env File
+
+- after installing run this command: 
+```bash
+json-server --watch db.json --port 4000
+```
+- have in your .env:
+```bash
+VITE_USE_MOCK=true
+VITE_MOCK_API_URL=http://localhost:4000
+VITE_API_URL=http://localhost:xxxx
+```
+
 
