@@ -1,6 +1,6 @@
 # OVARC TASK
 
-## Simple Backstore Application
+## A Simple Bookstore Application
 [10.08.2025 16_30.webm](https://github.com/user-attachments/assets/76569485-09be-4a45-8a5c-e2aa1b88d4b1)
 
 
